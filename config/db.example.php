@@ -1,7 +1,8 @@
 <?php
 // ============================================================
-// Database connection (PDO)
-// IT 415 — Cafeteria POS
+// Database connection TEMPLATE
+// Copy this file to config/db.php and edit credentials.
+// NEVER commit config/db.php to Git.
 // ============================================================
 
 $DB_HOST = '127.0.0.1';

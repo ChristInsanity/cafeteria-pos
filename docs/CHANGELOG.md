@@ -16,6 +16,31 @@ See `agent.md` for the modification protocol.
 
 ---
 
+## [1.2.0] — 2026-10-14
+
+### Added
+- `products.php` — product management page with inline edit + soft delete
+- `docs/screenshots/` — 8 submission screenshots
+  (product list, cart, payment error, receipt modal, GitHub history,
+  transaction history, add product, products management)
+
+### Changed
+- `assets/js/app.js` — receipt now displays in a modal overlay instead of
+  an inline panel; body scroll locks while modal is open
+- `assets/css/style.css` — added modal styles, products-table styles,
+  inline-edit inputs, badges, action buttons
+- `index.php`, `history.php`, `add_product.php` — nav updated to include
+  a **Products** link (uniform across all pages)
+- `docs/CHANGELOG.md` — this file
+- `README.md` — documented new pages and features
+
+### MUTATE notes
+Restricted files modified in this release (per `agent.md`):
+- `assets/js/app.js` — approved by jhonpatrickacedo (2026-10-14)
+  Reason: receipt UX change (inline panel → modal)
+
+---
+
 ## [1.1.0] — 2026-10-14
 
 ### Added

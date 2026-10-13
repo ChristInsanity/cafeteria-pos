@@ -30,14 +30,17 @@ http://localhost/cafeteria-pos/
 - Numeric cash payment input
 - Payment validation: blank, non-numeric, negative, insufficient
 - Correct change computation (`Change = Amount Paid − Total`)
-- Payment confirmation screen
+- Payment confirmation screen (modal)
 - Digital receipt with items, quantities, subtotals, total, amount paid, change, transaction reference
 - "Start New Transaction" — clears cart, payment, receipt
 
 ### Extra (not required, but included)
 
 - Double validation (client + server)
-- Persistent transaction history in MySQL
+- Persistent transaction history in MySQL (`history.php`)
+- Product management page (`products.php`) — edit + soft delete
+- Add product page (`add_product.php`)
+- Receipt shown in an Apple-style modal overlay
 - Apple-inspired clean UI
 
 ---
@@ -59,7 +62,10 @@ No frameworks. No build tools. No dependencies.
 
 ```
 cafeteria-pos/
-├── index.php                  ← Main UI
+├── index.php                  ← Main POS UI
+├── history.php                ← Transaction history
+├── products.php               ← Manage products (edit / soft-delete)
+├── add_product.php            ← Add a new product
 ├── api/
 │   ├── products.php           ← GET — menu as JSON
 │   └── checkout.php           ← POST — processes payment, saves txn
@@ -71,7 +77,9 @@ cafeteria-pos/
 │   └── db.example.php         ← Template for other machines
 ├── docs/
 │   ├── cafeteria_pos.sql      ← DB schema + seed data
-│   └── ai-usage.md            ← AI-assisted dev log (exam req.)
+│   ├── ai-usage.md            ← AI-assisted dev log (exam req.)
+│   ├── CHANGELOG.md           ← Version history
+│   └── screenshots/           ← Submission screenshots
 ├── agent.md                   ← AI restriction contract
 ├── knowledge.md               ← Project knowledge base
 └── README.md                  ← This file
@@ -122,8 +130,14 @@ Open `http://localhost/cafeteria-pos/` in your browser.
 4. **Review** — total updates live at the bottom of the cart
 5. **Enter cash** — type the amount paid
 6. **Confirm payment** — validation runs; errors show if invalid
-7. **View receipt** — reference no., items, total, paid, change
+7. **View receipt** — modal opens with reference no., items, total, paid, change
 8. **New transaction** — resets everything for the next customer
+
+### Additional pages
+
+- **Products** (`products.php`) — edit name/price inline, soft-delete (hide) items
+- **History** (`history.php`) — all past sales, newest first
+- **Add Product** (`add_product.php`) — add a new menu item
 
 ### Worked Example
 
@@ -207,7 +221,7 @@ Policy highlights (see `agent.md`):
 - No login / authentication (not required by exam)
 - Single terminal / cashier (no concurrency handling)
 - On-screen receipt only (no physical printer)
-- Menu is seeded via SQL (no in-app product editor)
+- Soft-deleted products remain in the DB (intentional — preserves past transactions)
 
 ---
 
