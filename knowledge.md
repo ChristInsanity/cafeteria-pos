@@ -33,6 +33,24 @@ accepts cash, gives change, and prints/display a digital receipt.
 
 ## File Map
 
+```
+cafeteria-pos/
+├── index.php                  ← Main UI (single page)
+├── api/
+│   ├── products.php           ← GET — returns menu as JSON
+│   └── checkout.php           ← POST — processes payment, saves txn
+├── assets/
+│   ├── css/style.css          ← All styling (Apple-like)
+│   └── js/app.js              ← All front-end logic
+├── config/
+│   ├── db.php                 ← LIVE DB credentials (gitignored)
+│   └── db.example.php         ← Template for setup on other machines
+├── docs/
+│   └── cafeteria_pos.sql      ← DB schema + seed data
+├── agent.md                   ← AI restriction contract
+├── knowledge.md               ← This file
+└── README.md                  ← Submission summary
+```
 
 ## Database Schema
 

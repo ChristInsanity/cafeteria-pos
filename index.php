@@ -2,34 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafeteria POS — Scenario 1</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="app-header">
-    <h1>Cafeteria POS</h1>
-    <p class="subtitle">IT 415 Practical Exam — Scenario 1</p>
-  </header>
+  <!-- ================= NAV ================= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/cafeteria-pos/" class="nav-logo">Cafeteria POS</a>
+      <ul class="nav-links">
+        <li><a href="#products-panel">Menu</a></li>
+        <li><a href="#cart-panel">Order</a></li>
+        <li><a href="#receipt-panel">Receipt</a></li>
+        <li><a href="history.php">History</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- ================= MAIN LAYOUT ================= -->
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1>Cafeteria POS</h1>
+    <p class="hero-tag">Fast. Simple. Ready for lunch.</p>
+  </section>
+
+  <!-- ================= MAIN ================= -->
   <main class="layout">
 
     <!-- LEFT: Product list -->
     <section class="panel" id="products-panel">
-      <h2>Menu</h2>
+      <div class="panel-head">
+        <h2>Menu</h2>
+        <a href="add_product.php" class="panel-link">+ Add product</a>
+      </div>
       <div id="product-list" class="product-grid">
         <!-- Products injected by app.js -->
       </div>
     </section>
 
-    <!-- RIGHT: Cart / Order summary -->
+    <!-- RIGHT: Cart -->
     <section class="panel" id="cart-panel">
-      <h2>Order Summary</h2>
+      <div class="panel-head">
+        <h2>Order Summary</h2>
+      </div>
 
       <div id="cart-items" class="cart-items">
-        <!-- Cart rows injected by app.js -->
         <p class="empty-msg">Cart is empty.</p>
       </div>
 
@@ -40,7 +58,6 @@
         </div>
       </div>
 
-      <!-- Payment section -->
       <div class="payment-section">
         <label for="amount-paid">Amount Paid (Cash)</label>
         <input type="number" id="amount-paid" placeholder="0.00" step="0.01" min="0">
@@ -53,12 +70,29 @@
 
     <!-- Receipt (hidden until payment succeeds) -->
     <section class="panel receipt-panel" id="receipt-panel" hidden>
-      <h2>Payment Confirmation</h2>
+      <div class="panel-head">
+        <h2>Payment Confirmation</h2>
+      </div>
       <div id="receipt-content"></div>
       <button id="new-txn-btn" class="btn btn-secondary">Start New Transaction</button>
     </section>
 
   </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Cafeteria POS</span>
+        <span class="footer-tag">Point-of-Sale System</span>
+      </div>
+      <div class="footer-meta">
+        <span>Terminal 01 · Main Counter</span>
+        <span>Cashier on duty: J. Acedo</span>
+        <span>&copy; 2026 Davao del Norte State College</span>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/js/app.js"></script>
 </body>
