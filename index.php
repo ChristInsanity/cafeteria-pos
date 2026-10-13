@@ -8,40 +8,32 @@
 </head>
 <body>
 
-  <!-- ================= NAV ================= -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/cafeteria-pos/" class="nav-logo">Cafeteria POS</a>
+      <a href="index.php" class="nav-logo">Cafeteria POS</a>
       <ul class="nav-links">
-        <li><a href="#products-panel">Menu</a></li>
-        <li><a href="#cart-panel">Order</a></li>
-        <li><a href="#receipt-panel">Receipt</a></li>
+        <li><a href="index.php">Menu</a></li>
         <li><a href="history.php">History</a></li>
+        <li><a href="add_product.php">Add Product</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
     <h1>Cafeteria POS</h1>
     <p class="hero-tag">Fast. Simple. Ready for lunch.</p>
   </section>
 
-  <!-- ================= MAIN ================= -->
   <main class="layout">
 
-    <!-- LEFT: Product list -->
     <section class="panel" id="products-panel">
       <div class="panel-head">
         <h2>Menu</h2>
         <a href="add_product.php" class="panel-link">+ Add product</a>
       </div>
-      <div id="product-list" class="product-grid">
-        <!-- Products injected by app.js -->
-      </div>
+      <div id="product-list" class="product-grid"></div>
     </section>
 
-    <!-- RIGHT: Cart -->
     <section class="panel" id="cart-panel">
       <div class="panel-head">
         <h2>Order Summary</h2>
@@ -61,14 +53,11 @@
       <div class="payment-section">
         <label for="amount-paid">Amount Paid (Cash)</label>
         <input type="number" id="amount-paid" placeholder="0.00" step="0.01" min="0">
-
         <button id="pay-btn" class="btn btn-primary">Confirm Payment</button>
-
         <p id="message" class="message"></p>
       </div>
     </section>
 
-    <!-- Receipt (hidden until payment succeeds) -->
     <section class="panel receipt-panel" id="receipt-panel" hidden>
       <div class="panel-head">
         <h2>Payment Confirmation</h2>
@@ -79,7 +68,6 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
