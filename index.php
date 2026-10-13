@@ -13,6 +13,7 @@
       <a href="index.php" class="nav-logo">Cafeteria POS</a>
       <ul class="nav-links">
         <li><a href="index.php">Menu</a></li>
+        <li><a href="products.php">Products</a></li>
         <li><a href="history.php">History</a></li>
         <li><a href="add_product.php">Add Product</a></li>
       </ul>
@@ -58,13 +59,18 @@
       </div>
     </section>
 
-    <section class="panel receipt-panel" id="receipt-panel" hidden>
-      <div class="panel-head">
-        <h2>Payment Confirmation</h2>
+    <!-- Receipt Modal (shown after successful payment) -->
+    <div class="modal-overlay" id="receipt-panel" hidden>
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Payment Confirmation</h2>
+        </div>
+        <div class="modal-body" id="receipt-content"></div>
+        <div class="modal-foot">
+          <button id="new-txn-btn" class="btn btn-primary">Start New Transaction</button>
+        </div>
       </div>
-      <div id="receipt-content"></div>
-      <button id="new-txn-btn" class="btn btn-secondary">Start New Transaction</button>
-    </section>
+    </div>
 
   </main>
 

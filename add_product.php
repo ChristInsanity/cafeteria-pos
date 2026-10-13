@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <a href="index.php" class="nav-logo">Cafeteria POS</a>
       <ul class="nav-links">
         <li><a href="index.php">Menu</a></li>
+        <li><a href="products.php">Products</a></li>
         <li><a href="history.php">History</a></li>
         <li><a href="add_product.php">Add Product</a></li>
       </ul>

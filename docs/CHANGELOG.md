@@ -16,6 +16,26 @@ See `agent.md` for the modification protocol.
 
 ---
 
+## [1.1.0] — 2026-10-14
+
+### Added
+- `history.php` — transaction history page (all past sales, newest first)
+- `add_product.php` — form to add new products to the menu
+- Nav links across all pages: **Menu · History · Add Product**
+- Footer branding: terminal ID, cashier name, institution
+
+### Changed
+- `index.php` — added "+ Add product" link in Menu panel, removed decorative nav
+- `assets/css/style.css` — added form styles, history table styles,
+  wide layout, panel link, footer polish
+- Removed unused `api/add_product.php` (form handles POST directly)
+
+### Scope note
+Extended the app beyond the IT 415 exam's minimum requirements.
+Core exam features (Section V) remain unchanged and verified.
+
+---
+
 ## [1.0.0] — 2026-10-13
 
 ### Added
@@ -55,3 +75,10 @@ When a **restricted** file (see `agent.md`) is modified, add an entry here
 - Approval (who authorized it)
 
 Example entry for a future `MUTATE:` commit:
+
+```
+### MUTATE — 2026-10-15
+- File: api/checkout.php
+- Reason: Fixed rare case where a 0-quantity item was accepted
+- Approved by: jhonpatrickacedo
+```
